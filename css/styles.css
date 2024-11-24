@@ -1,0 +1,481 @@
+*, *::before, *::after {box-sizing: border-box; margin: 0; padding: 0;} /* Basic Reset */
+
+:root { --primary-color: #333; --background-color: #FF914D;  --transition-time: 2s; } /* Root Variables */
+
+/*PC nav starts*/
+header .navbar{display: flex; justify-content: space-between; align-items: center; padding-left: 0.4rem; padding-top: 1rem; padding-bottom: 1rem;
+   background-color: black;  box-shadow:  0 10px 20px rgba(255, 145, 77, 0.3);  position:fixed; width: 100%;}
+header .navbar .victory .logo-link{ display: flex; align-items: center; text-decoration: none; color: #FF914D; transition: color 1s;}
+header .navbar .victory .logo-link .logo{max-width: 75px; height: auto; border-radius: 50%; border: 2px solid black; border-color: #FF914D; }
+header .navbar .victory .logo-link .site-name{font-size: 2.2rem; font-weight: bold; margin-left: 4px;}
+header .navbar ul {display: flex; list-style: none; gap: 1.5rem; margin-top: 6.5px;}
+header .navbar ul li a{text-decoration: none; font-size: 1.3rem; padding: 0.5rem; color: #FF914D; transition:color 1.0s;}
+header .navbar ul li a:hover{ color: #fff;  border-radius: 5px;}
+header .navbar .victory .logo-link:hover{color: #fff; }
+/*PC nav ends*/
+
+/* styling for hamburger icon bars starts */
+.navbar-toggle-label {display: none; flex-direction: column; align-items: center; cursor: pointer; gap: 12px; padding-top: 5px; padding-right: 0.5rem;}
+.navbar-toggle-label .bar {width: 49px; height: 4px; background-color: #fff; transition: var(--transition-time);}
+/* styling for hamburger icon bars ends */
+
+/* hamburger icon click transition starts(connected with checkbox (input) become cross after a click) */
+#toggle-menu:checked +  .navbar-toggle-label .bar:nth-child(1) {transform: rotate(45deg) translate(11.3px, 11.3px);}
+#toggle-menu:checked + .navbar-toggle-label .bar:nth-child(2) {opacity: 0;}
+#toggle-menu:checked + .navbar-toggle-label .bar:nth-child(3) {transform: rotate(-45deg) translate(11.3px, -11.3px);}
+/* hamburger icon click transition starts(connected with checkbox (input)) */
+
+#toggle-menu {display: none;} /* this is for hiding the checkbox */
+
+/* media query for hamburger starts */
+@media (max-width: 768px) {header .navbar ul {flex-direction: column; align-items: center; width: 100%; max-height: 0; overflow: hidden; position: absolute;
+                            transition: max-height var(--transition-time) ease-out; top: 96%; left: 0; background-color: #333; z-index: 10;}
+header .navbar .nav-menu{transition: max-height var(--transition-time) ease-out;}
+#toggle-menu:checked ~  ul.nav-menu {display: flex; max-height: 230px; }/* here is checkbox connected to ul(ul has home about etc etc)*/
+.navbar-toggle-label {display: flex;}
+header .navbar .nav-menu li:first-child {margin-top: 1rem;}
+header .navbar .nav-menu li:last-child {margin-bottom: 1rem;}}
+/* media query for hamburger ends */
+
+/* main content starts */
+    /* victorydigitals h1 starts */
+main{padding-top: 107px;  text-align: justify; font-size: 20px;  line-height: 1.8; font-family:   'Merriweather', 'Montserrat', 'Open Sans',  'Roboto', sans-serif; }
+main .article h1, h2{display: inline-block;}
+main .article p{display: inline;}
+main .article .container {padding-left: 0.5rem; padding-right: 0.5rem; padding-bottom: 0.2rem;
+                          border-top: 2px solid black; border-color: #FF914D;}
+    /* victorydigitals h1 starts */
+
+    /* services section h2 and h3 tags with stars starts */
+main .article .color {  background-color: black; padding-left: 0.5rem; padding-right: 0.5rem; border-top: 2px solid black; border-left: 2px solid black;
+                    border-right: 2px solid black; border-color: #FF914D; padding-bottom: 0.2rem; border-top-left-radius: 20px;
+                   padding-top: 0.2rem; border-top-right-radius: 20px;}
+main .article .border .color h2{color: #FF914D;}
+main .article .color p {color: #FF914D;}
+main .article .border h3:nth-of-type(1) {border-top: 1px dotted black;  border-left: 2px solid black; border-right: 2px solid black;  border-color: #FF914D; }
+main .article .border h3:nth-of-type(2) { border-left: 2px solid black; border-right: 2px solid black;  border-color: #FF914D;}
+main .article .border h3:nth-of-type(3) {border-left: 2px solid black; border-right: 2px solid black;  border-color: #FF914D;}
+main .article .border h3:nth-of-type(4) {border-left: 2px solid black; border-right: 2px solid black;  border-color: #FF914D;}
+main .article .border h3:nth-of-type(5) {padding-bottom: 0.3rem; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;
+                                          border-left: 2px solid black; border-right: 2px solid black; border-bottom: 2px solid black;
+                                          border-color: #FF914D;}
+main .article .border  h3 { background-color: black;  padding-left: 0.5rem; padding-right: 0.5rem; color: white;}
+main .article .border h3::before { content: "★"; color: white; font-size: 2rem;  margin-right: 20px;} /* stars */
+main .article .border{ border-color: #FF914D;}
+    /* services section h2 and h3 tags with stars starts */
+
+    /* my work section with images, figcaptions starts */
+main .article .work .herbalife{padding-left: 0.5rem; padding-right: 0.5rem; padding-bottom: 0.7rem;}
+main .article .work figure .img {width: 29%; justify-content: center; align-items: center; display: flex; flex-direction: column;}
+main .article .work figure .img figcaption {background-color: black; color: white; width: 100%; align-items: center; display: flex; justify-content: center;
+                                            border: 2px solid black; border-color: #FF914D;  padding-left: 0.5rem; padding-right: 0.5rem; font-size: 1rem;}
+main .article .work figure .img img {width: 100%; border: 2px solid black; border-color: #FF914D;}
+main .article .work figure{display: flex; justify-content: space-between;}
+  /* my work section with images, figcaptions ends */
+
+/* why choose me starts */
+main .article .choose { padding-left: 0.5rem; padding-right: 0.5rem; padding-bottom: 0.4rem; margin-top: 1px;}
+/* why choose me ends */
+
+/* NAP, useful links & connect with me starts */
+    /* grid for changing the order starts */
+main .article .digital{display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto;  background-color: #333;}
+main .article .digital .nap{ grid-column: 1; }
+main .article .digital .links{ grid-column: 1/-1; order: -1;}
+main .article .digital .social{grid-column: 2; }
+    /* grid for changing the order ends */
+
+    /* connect with me starts */
+ .article .digital .social{align-items: flex-end; display: flex; flex-direction: column; padding-left: 0.5rem; padding-right: 0.5rem; border-right: 2px solid black;
+                          border-bottom: 2px solid black; border-color: #FF914D; }
+ .article .digital .social .media ul{list-style: none; }
+ .article .digital .social .media ul li a {display: flex; align-items: center; font-size: 1rem; line-height: 2.25; gap: 10px;}   /* connect with me starts */
+  .article .digital .social .media ul li a:hover{color: #FF914D; }
+  .article .digital .social .media ul li:nth-of-type(1) {margin-top: 0.2rem;;}   /* connect with me starts */
+  .article .social .media img {max-width: 24px; }
+  .article .social .media .fb{margin-bottom: 0.77px;}
+ .article .social .media .insta{margin-bottom: 0.8px; }
+  .article .social .media .whatsapp{padding-bottom: 2.1px; }
+    /* connect with me ends */
+
+    /* useful links starts */
+main .article .digital .links{display: flex; align-items: center; border: 2px solid black; border-color: #FF914D; padding-left: 0.5rem; padding-right: 0.5rem;}
+main .article .digital .links ul{display: flex; gap:50px; margin-left: 50px;}
+main .article .digital .links ul a:hover{color: #FF914D; } /* #5a59ff; */
+main .article .digital .links ul li {color: #FF914D; }
+    /* /* useful links ends */
+
+main .article .digital h3 {color: #FF914D; }
+main .article .digital strong {color: #FF914D;}
+main .article .digital a {color: white; text-decoration: none;}
+
+    /* contact information starts */
+main .article .digital .nap{padding-left: 0.5rem; padding-right: 0.5rem; border-left: 2px solid black; border-bottom: 2px solid black;
+                            border-color: #FF914D;}
+main .article .digital .nap .address{margin-top: 2.9px;}
+main .article .digital .nap a:hover{color: #FF914D; }
+main .article .digital .nap a { font-size: 1rem;}
+    /* contact information ends */
+/* NAP, useful links & connect with me ends*/
+
+  /* footer starts */
+.footer p {display: inline; color: #FF914D; } .footer p a {color: #FF914D; text-decoration: none;}
+.footer { padding-left: 0.5rem; padding-right: 0.5rem; padding-top: 0.2rem; padding-bottom: 0.2rem; background-color: #333; color: white; border-left: 2px solid black; border-right: 2px solid black;
+          border-bottom: 2px solid black; border-color: #FF914D; display: flex; justify-content: space-between;}
+  /* footer starts */
+
+main .article .digital .links .label img{display: none;} .input {display: none;} /* hiding useful links- Input and Label icon(img) */
+/* main content ends */
+
+/* media queries for index.html starts */
+@media (max-width: 1271px) {.digital .nap, main, .digital .links  { font-size: 1rem; }
+                            main .article .border h3::before { content: "★";  font-size: 1.5rem;  margin-right: 10px;}
+                            main .article .social .media img{ max-width: 18px; margin-top: 1.4px;}
+                            .article .digital .social .media ul li a{font-size: 0.8rem;}
+                            .article .digital .social .media ul li:nth-of-type(1) {margin-top: 0.35rem;}
+                            main .article .digital .nap .address{margin-top: 5.9px;}
+                              main .article .social .media .fb {margin-top: 0.7px;}
+                              main .article .social .media .insta {margin-bottom: 2.66px;}
+                            main .article .social .media .whatsapp{padding-bottom: 2.24px;}
+                            .article .digital .nap p a{font-size: 0.8rem;}}
+@media (max-width: 1024px) {.digital .social, .digital .nap,  main .article .choose, .article .work, .article .container{font-size: 0.9rem; }
+                            .article .digital .nap p a{font-size: 0.7rem;}
+                            main .article .social .media img {max-width: 18px; }
+                            .article .digital .social .media ul li:nth-of-type(1) {margin-top: 0.36rem;}
+                            .article .digital .social .media ul li a  {line-height: 2.1; font-size: 0.7rem;} /* fix this later main .article .social .media img{max-width:20px;} */
+                            main .article .social .media .fb{margin-bottom: 2px; }
+                            main .article .social .media .insta{margin-bottom: 4.91px; }
+                            main .article .digital .nap .address{margin-top: 1px;}
+                            main .article .work figure .img {width: 29%;}
+                            main .article .work figure .img figcaption {font-size: 0.8rem;}
+                            main .article .social .media .whatsapp{padding-bottom: 4.5px;}}
+
+
+@media (max-width: 832px) { main .article .work figure .img {width: 32%; }
+                            main .article .work figure .img figcaption{font-size: 0.7rem;}}
+@media (max-width: 765px)   {.article .digital .social .media ul li a  {line-height: 3.2; }
+                              main .article .social .media .whatsapp{padding-bottom: 3.898px;}
+                              .article .digital .social .media ul li:nth-of-type(1) {margin-top: 0.1rem;}
+                              main .article .social .media .insta{margin-bottom: 3.4px; }
+                              main .article .social .media .whatsapp{padding-bottom: 3.5px;}
+                              main .article .work figure .img figcaption{font-size: 0.69rem;}
+                              main .article .social .media .fb{margin-bottom: 2.9px;}}
+@media (max-width: 665px)  { main .article .work figure { display: flex; flex-wrap: wrap;}
+                             main .article .work figure .img { flex: 1 1 48%;font-size: 1.1rem; margin-bottom: 0.2rem;}
+                             main .article .work figure .img #img2 { flex: 1 1 100%; font-size: 2rem; margin-top: 0.2rem;}
+                             main .article .work figure .img figcaption{ font-size: 0.99rem;}
+
+  /*.work figure { flex-direction: column;}
+                            .work figure #img1, #img3 {width: 100%; margin-top: 0.2rem; font-size: 2rem;}
+                            .work figure #img2 {width: 100%;} */
+                            main .article .social .media .fb{margin-bottom: 3.8px;}
+                            main .article .social .media .insta{margin-bottom: 5px;}
+                            main .article .social .media .whatsapp{padding-bottom: 5px;}
+                            main .article .digital .links {font-size: 0.9rem;}}
+@media (max-width: 605px) { .work figure .work, figure #img1 figcaption, #img3 figcaption   {font-size: 0.8rem;}
+                            #img2 figcaption {font-size: 1rem;}
+                            main .article .digital .links .label img{max-width: 20px; cursor: pointer; display: block; margin-left: 39px;}
+                            #checkbox:checked ~ ul {display: flex;  max-height: 100px;} /* this media query includes useful links button, input label */
+                            main .article .digital .links ul {max-height: 0; flex-direction: column; border-radius: 5%;
+                                                              background-color: #5a59ff; left: -41.8px; gap: 2px; margin-bottom: 150px; overflow: hidden;
+                                                               position: absolute; transition: max-height var(--transition-time) ease-out;}
+                              main .article .digital .links ul li:nth-of-type(1) { margin-top: 6px; margin-left: 5px;}
+                              main .article .digital .links ul li:nth-of-type(3) {margin-bottom: 4px; margin-left: 5px; margin-right: 5px;}
+                              main .article .digital .links ul li:nth-of-type(2) {margin-left: 4px; margin-left: 5px;}}
+
+@media (max-width: 500px) {main .article .digital{display: grid; grid-template-columns: 1fr; grid-template-rows: auto auto;  background-color: #333;}
+                          main .article .digital .nap, main .article .digital .links, main .article .digital .social { grid-column: span 1; order: initial;}
+                          main .article .digital .links {order: 1;} /* this media query includes NAP */
+                          main .article .digital .social {order: 2; align-items: flex-start; border: none; border-left: 2px solid black;
+                                                          border-right: 2px solid black; border-color: #FF914D;}
+                          main .article .digital .nap {order: 3; border: none; border-left: 2px solid black; border-right: 2px solid black;
+                                                        border-color: #FF914D; padding-top: 1.5rem;}
+                          main .article .digital .nap p{line-height: 2.5;}
+                          main .article .digital .links ul{margin-top: 357px; left: 150px;}
+                          main .article .digital .links .label img{margin-left: 9px;}
+                          .footer{font-size: 0.9rem; border: 2px solid black; border-color: #FF914D; }
+                          main .article .work figure {display: flex; flex-direction: column; align-items: center;}
+                          main .article .work figure .img { width: 100%; margin-bottom: 0.2rem;}
+                          .work figure .work, figure #img1 figcaption, #img3 figcaption, #img2 figcaption {font-size: 1.2rem;}}
+@media (max-width: 468px) { .work figure .work, figure #img2 figcaption, #img1 figcaption , #img3 figcaption {font-size: 1.22rem;}
+                          header .navbar .victory .logo-link .logo{max-width: 59px;} /* logo width */
+                          .digital  .nap p strong{color: white;} /* contact information nap heading color  */
+                          .digital .social, .digital .nap, main, .digital .links  { font-size: 0.9rem; } /* services h3 size*/
+                          main .article .border h3::before { content: "★";  font-size: 1.3rem;} /*stars size */
+                          main .article .container{margin-top: -16px;}}
+@media (max-width: 450px) {.footer {font-size: 0.74rem;} .footer p, .footer p a {color: white;} }
+/* media queries for index.html ends ends */
+
+
+
+/* address page starts */
+main .article .address-page header {text-align: center; background-color: black; color: white; padding: 0.5rem; border-top: 2px solid black; border-color: #333;}
+main .article .address-page {background-color: #333;  }
+main .article .digital {margin-top: -11px; }
+@media (max-width: 750px) { main .article .address-page header h1 {font-size: 1rem;} }
+@media (max-width: 650px) { main .article .address-page header h1 {font-size: 0.8rem;} }
+@media (max-width: 525px) { main .article .address-page header h1 {font-size: 0.7rem; }
+                            main .article .address-page header { padding-top: 0.1rem; padding-bottom: 0.3rem; }}
+@media (max-width: 468px) { main .article .address-page header h1 {font-size: 0.57rem; }
+                            main .article .address-page header { padding-top: 0.1rem; padding-bottom: 0.3rem; margin-top: -16px; }}
+/* address page ends */
+
+
+
+/* partnets page starts */
+main .partners { background-color: #800020;  margin-bottom: 11px; border-left: 2px solid black; border-right: 2px solid black; border-bottom: 2px solid black; border-top: 2px solid black; border-color: #FF914D; }
+main .partners header{ color: #FF914D; padding-left: 0.5rem; padding-right: 0.5rem; padding-top: 0.5rem; padding-bottom: 0.4rem; font-size: 1.44em;}
+main .partners .disc li {  padding: 0.5rem; color: white;}
+main .partners .disc li:first-child { border-top: 2px dotted black; border-bottom: 2px dotted black; border-color: #FF914D; }
+main .partners .disc li:nth-child(2) {border-bottom: 2px dotted black; border-color: #FF914D; }
+main .partners .disc li:nth-child(3) {border-bottom: 2px dotted black; border-color: #FF914D; }
+main .partners .disc li:nth-child(4) {border-bottom: 2px dotted black; border-color: #FF914D; }
+main .partners .disc li a {font-size: 1.3em; color: #FF914D;}
+main .partners .disc li a:hover {color: white;}
+
+@media(max-width:600px) { main .partners .disc li a {font-size: 1.7em;}
+                          main .partners .disc li {font-size: 0.8em;}
+                          main .partners header{font-size: 1.3em;}}
+@media(max-width:542px) { main .partners .disc li a {font-size: 1.45em;}
+                          main .partners .disc li {font-size: 0.8em;}
+                          main .partners header{font-size: 1.2em;}}
+@media(max-width:502px) { main .partners .disc li a {font-size: 1.15em;}
+
+                          main .partners header{font-size: 1.1em;}}
+@media(max-width:468px) { main .partners {margin-top: -15.8px;}
+                          main .partners .disc li a {font-size: 1.15em;}
+                          .partners .disc li {font-size: 0.4em;}
+                          main .partners header{font-size: 1.1em; }}
+@media(max-width:416px) { main .partners {margin-top: -15.8px;}
+                          main .partners .disc li a {font-size: 1.4em;}
+                          main .partners .disc li {font-size: 0.65em;}
+                          main .partners header{font-size: 0.96em; }}
+/* partnets page ends */
+
+
+
+/* blog page starts */
+#blog {background-color: black;} /* background color of the whole main page*/
+main .blog { background-color: black; }
+#business-6, #business-5, #business-4, #business-3 {background-color: #800020;}
+main .blog .header1 { padding-left: 0.5rem; padding-right: 0.5rem; padding-top: 0.5rem; padding-bottom: 0.3rem; text-align: center;  color: #FF914D; border-top-left-radius: 20px; border-top-right-radius: 20px;
+                      border-left: 2px solid black; border-right: 2px solid black; border-top: 2px solid black; border-color: #FF914D; background-color: #800020; }
+main .blog .nutrition { padding-left: 0.5rem; padding-right: 0.5rem; border-left: 2px dotted black; border-right: 2px dotted black;
+                       border-top: 2px dotted black;  border-bottom: 2px dotted black; border-color: #FF914D; padding-top: 0.4rem;  color: white;
+                        margin-top: 0.1rem; background-color: #800020;}
+main .blog .nutrition .header2 h2 {display: inline; font-size: 1.1em; text-align: justify; color: #FF914D;}
+main .blog .nutrition header p {display: inline; font-size: 0.9em; }
+main .blog .nutrition a {  font-size: 0.9rem; color: #FF914D;}
+
+
+main .blog .business-2 { padding-left: 0.5rem; padding-right: 0.5rem; border-left: 2px dotted black; border-right: 2px dotted black;
+                        border-bottom: 2px dotted black; border-color: #FF914D; padding-top: 0.4rem;  color: white; margin-top: 0.1rem; margin-bottom: 13px;}
+main .blog .business-2 .header2 h2 {display: inline; font-size: 1.1em; text-align: justify; color: #FF914D;}
+main .blog .business-2 header p {display: inline; font-size: 0.9em; }
+main .blog .business-2 a {  font-size: 0.9rem; color: #FF914D;}
+main #contact {background-color: black; }
+#footer-blog {background-color: black;}
+
+main .blog .business-3 { padding-left: 0.5rem; padding-right: 0.5rem; border-left: 2px dotted black;
+                        border-right: 2px dotted black;
+                        border-bottom: 2px dotted black; border-color: #FF914D; padding-top: 0.4rem;  color: white; margin-top: 0.1rem; }
+main .blog .business-3 .header3 h2 {display: inline; font-size: 1.1em; text-align: justify; color: #FF914D;}
+main .blog .business-3 header p {display: inline; font-size: 0.9em; }
+main .blog .business-3 a {  font-size: 0.9rem; color: #FF914D;}
+
+@media (max-width:605px) { main #links ul { background-color: #c19d5f;}}
+@media (max-width:468px) {main .blog {margin-top: -16px;}}
+@media (max-width:442px) { main .blog .nutrition a { font-size: 0.75rem;}
+                          main .blog .header1 {font-size: 0.8em;}
+                          main .blog .business-2 a {  font-size: 0.8rem;}
+                          main .blog .business-3 a {font-size: 0.8rem;}
+                        }
+/* blog page ends */
+
+
+
+/* herbalife page starts */
+    /* herbalife intro with img starts #FF914D; */
+main .lifepage .reviews img {width: 100%;}
+main .lifepage .header h1 {color: #00008b; }
+main .lifepage .header p {color: black; }
+main .lifepage .header {  display:flex; justify-content: space-between; font-size: 1rem;  } /* #22572a; #025d53; #ffffff;*/
+main .lifepage .header .nutrition p span {color: #00008b; font-weight: bold; font-size: 1.2em; font-family: 'Open Sans', 'Montserrat', 'Roboto', 'Merriweather', sans-serif;}
+main .lifepage .header .nutrition {width: 61.6%; padding-left: 0.5rem; padding-right: 0.5rem; background: linear-gradient(145deg, #b2ff59 0%, #2c3e50 100%);
+                                  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5), -10px -10px 30px rgba(255, 255, 255, 0.3);}
+main .lifepage .header figure  {width: 38.4%;  background-color: black;}
+main .lifepage .header figure img {width: 100%; height: 100%;}
+    /* herbalife intro with img ends */
+
+
+main .lifepage .cover, main .lifepage .cover img  {height: 550px; width: 100%;  }
+main .lifepage .cover .banner {display: none;}
+
+    /* service areas start */
+main .lifepage .locations { width: 64.4%; padding-top: 0.4rem; padding-left: 0.5rem; padding-right: 0.5rem; border: 2px solid black; border-color: #FF914D;}
+main .lifepage .locations header { display: inline; font-size: 0.8em; }
+main .lifepage .locations header h2 { position: relative; display: inline-block;}
+main .lifepage .locations header h2::after{border-bottom: 2px solid black; position: absolute; content: ''; top: 35px; left: 0; width: 176px;}
+main .lifepage .locations p {display: inline; font-size: 0.9em; line-height: 2.5; font-weight: bold;}
+main .lifepage .locations .areas {display: flex; justify-content:flex-start;}
+main .lifepage .locations .areas .panchkula {margin-top: 1.4rem; margin-left: 1.5rem;}
+main .lifepage .locations .areas .panchkula ul  {display: flex; flex-direction: column; gap:1.6rem;  font-size: 1.1em; margin-top: 0.3rem;}
+main .lifepage .locations .areas .aerocity ul {display: flex; flex-direction: column; gap:1.6rem;  font-size: 1.1em; margin-top: 0.3rem;}
+main .lifepage .locations .areas .aerocity {margin-top: 1.4rem; margin-left: 6rem;}
+main .lifepage .wrapping {display: flex; justify-content: space-between; margin-bottom: 0.8rem; margin-top: 0.1rem;}
+      /* service areas end */
+
+      /* review section starts */
+main .lifepage .reviews {height: 300px; position: relative; overflow: scroll; width: 480px; border-top: 2px solid black; border-bottom: 2px solid black;
+                                       border-left: 2px solid black;  padding-left: 0.5rem; padding-top: 0.5rem; border-color:#FF914D; }
+main .lifepage .reviews .gulugulu {width: 150px; margin-top: 72px;}
+main .lifepage .reviews .herbalreviews header {width: 450px;  font-size: 0.7em; position: absolute;}
+main .lifepage .reviews .herbalreviews .based { font-size: 14px; position: absolute; margin-top: 38px; margin-left: 150px; font-family:  'Open Sans', 'Montserrat', 'Merriweather',  'Roboto',  sans-serif;}
+
+
+main .lifepage .reviews .feedback img {max-width: 40px;}
+main .lifepage .reviews .feedback .customer {display: flex; align-items: center; gap:5px; font-size: 16px; position: absolute; margin-top: 15px;}
+main .lifepage .reviews .feedback .customer .text {width: 421px;  margin-top: 165px; padding-left: 2.8rem; position: absolute; font-size: 0.9em;}
+main .lifepage .reviews .feedback .customer .text-cx {width: 421px;  margin-top: 115px; padding-left: 2.8rem; position: absolute; font-size: 0.9em;}
+main .lifepage .reviews .feedback .customer .text-rx {width: 421px;  margin-top: 195px; padding-left: 2.8rem; position: absolute; font-size: 0.9em; }
+main .lifepage .reviews .feedback #customer {margin-top: 200px;}
+main .lifepage .reviews .feedback #customer-rx {margin-top: 340px; }
+
+header .navbar {z-index: 100;}
+.stars {font-family: sans-serif; position: absolute; margin-left: 330px; margin-top: 6px; width: 150px;}
+.stars::before{content: "5.0 ★★★★★"; color: rgb(250, 187, 5);}
+.rating::before {
+    content: "5.0 ★★★★★";
+    font-size: 24px;
+    color: #fb8e28;
+    font-weight: bold;
+    margin-top: 28px;
+    position: absolute;
+  }
+      /* review section ends */
+
+@media (max-width:1326px) { main .lifepage .header figure{ width: 45%;}
+                            main .lifepage .header .nutrition{width: 55%;}
+                            main .lifepage .cover, main .lifepage .cover img  {height: 470px; width: 100%;}}
+@media (max-width:1248px) { main .lifepage .header figure{ width: 40%; position: absolute; height: 400px; left: 60%;}
+                            main .lifepage .header .nutrition {width: 60%; height: 400px; position: absolute; overflow: scroll;}
+                            main .lifepage .wrapping {margin-top: 201px;}
+                            main .lifepage .cover, main .lifepage .cover img  {height: 450px; width: 100%; margin-top: 200px;}}
+                              /* main .lifepage .reviews {margin-top: 420px;} */
+
+@media (max-width:1270px) {main .lifepage .reviews .herbalreviews header  {font-size: 0.9em;}
+                          main .lifepage .locations header { font-size: 1em; }
+                          main .lifepage .locations p {font-size: 1.1em;}
+                          main .lifepage .locations .areas .panchkula ul{font-size: 1.2em; gap:1.9rem; margin-top: 0.6rem;}
+                          main .lifepage .locations .areas .aerocity ul{font-size: 1.2em; gap:1.9rem; margin-top: 0.6rem;}}
+@media (max-width:1180px) { main .lifepage .locations{width: 55%;}
+                            main .lifepage .reviews{width: 531px;}}
+@media (max-width:1122px) {main .lifepage .locations .areas .panchkula ul{font-size: 1.2em; gap:1.8rem; margin-top: 0.9rem; }
+                          main .lifepage .locations .areas .aerocity ul{font-size: 1.2em; gap:1.8rem; margin-top: 0.9rem; }
+                          main .lifepage .locations p { line-height: 2.5; font-weight: normal;}}
+@media (max-width:1113px) {main .lifepage .locations p { line-height: 1.5;}
+                          main .lifepage .locations .areas .panchkula ul{margin-top: 0.3rem;}
+                          main .lifepage .locations .areas .aerocity ul{margin-top: 0.3rem;}}
+@media (max-width:978px) {main .lifepage .header h1 {font-size: 1.3rem;}
+                          main .lifepage .header figure, main .lifepage .header .nutrition {height: 350px;}
+                          main .lifepage .header figure {width: 45%;}
+                          main .lifepage .header .nutrition {width: 55%;}
+                          main .lifepage .header figure {left: 55%;}
+                          main .lifepage .wrapping {margin-top: 176px;}
+                          main .lifepage .cover, main .lifepage .cover img  {height: 400px; width: 100%; margin-top: 175px;}}
+
+
+@media (max-width:833px) {main .lifepage .header h1 {font-size: 1rem;}
+                          main .lifepage .header p {font-size: 0.9rem;}
+                          main .lifepage .reviews {width: 350px; height: 280px;}
+                          main .lifepage .locations { width: 58%;}
+                          main .lifepage .wrapping {height: 280px;}
+                          main .lifepage .reviews .herbalreviews header {font-size: 0.68em;}
+                          main .stars {margin-left: 235px;}
+                          main .lifepage .reviews .feedback .customer .text, main .lifepage .reviews .feedback .customer .text-cx, main .lifepage .reviews .feedback .customer .text-rx  {width: 326px; font-size: 0.8em; padding-left: 2.3rem;}
+                          main .lifepage .reviews .feedback .customer .text {margin-top: 170px;}
+                          main .lifepage .reviews .feedback #customer {margin-top: 210px;}
+                          main .lifepage .reviews .feedback .customer .text-cx{margin-top: 100px;}
+                          main .lifepage .reviews .feedback #customer-rx {margin-top: 338px;}
+                          main .lifepage .reviews .feedback .customer .text-rx {margin-top: 195px;}
+                          main .lifepage .reviews .feedback img {max-width: 30px;}
+                          main .lifepage .locations header {font-size: 0.8em;}
+                          main .lifepage .locations .areas .panchkula, main .lifepage .locations .areas .aerocity {margin-top: 1rem;}
+                          main .lifepage .locations .areas .panchkula ul {font-size: 1.18em; margin-top: 0rem; gap:1.6rem;}
+                          main .lifepage .locations .areas .aerocity ul {font-size: 1.18em; margin-top: 0rem; gap:1.6rem;}
+                          main .lifepage .locations p { font-weight: bold; line-height: 2.3; font-size: 0.9em; font-weight: normal;}
+                          main .lifepage .locations header h2::after{ content: ''; top: 30px; left: 0; width: 141px;}}
+@media (max-width:793px) {main .lifepage .locations { width: 51.4%;}
+                          main .lifepage .reviews {width: 385px;}
+                          main .lifepage .locations .areas .panchkula ul{font-size: 1em; gap:2rem;}
+                          main .lifepage .locations .areas .aerocity ul{font-size: 1em; gap:2rem;}}
+
+
+@media (max-width:715px) {main .lifepage .header figure, main .lifepage .header .nutrition {height: 300px;}
+                          main .lifepage .header figure {width: 48%;}
+                          main .lifepage .header .nutrition {width: 52%;}
+                          main .lifepage .header figure {left: 52%;}
+                          main .lifepage .wrapping {margin-top: 151px;}
+                          main .lifepage .cover, main .lifepage .cover img  {height: 400px; width: 100%; margin-top: 150px;}}
+
+@media (max-width:666px) {main .lifepage .header .nutrition {width: 100%;}
+                          main .lifepage .reviews {border-right: 2px solid black; border left: 2px solid black; border-top: none; border-bottom: none; border-color:white; }
+                          main .lifepage .header figure {display: none;}
+                          main .lifepage .cover .banner {display: block;}
+                          main .lifepage .cover .banner {margin-top: -9px;}
+                          main .lifepage .locations .areas .panchkula ul{gap:1rem; margin-bottom: 1rem;}
+                          main .lifepage .locations .areas .aerocity ul{gap:1rem; margin-bottom: 1rem;}
+                          main .lifepage .reviews .feedback #customer {margin-top: 160px;}
+                          main .lifepage .reviews .feedback #customer-rx {margin-top: 290px;}
+                          main .lifepage .wrapping {flex-direction: column;}
+                          main .lifepage .reviews { position: absolute; width: 100%; margin-top: 631px;}
+                          main .lifepage .reviews .feedback .customer {width: 100%; }
+                          main .lifepage .reviews .feedback .customer .text { width: 100%; padding-right: 1.1rem; margin-top: 100px;}
+                          main .lifepage .reviews .feedback .customer .text-cx { width: 100%; padding-right: 1.1rem; margin-top: 82px; }
+                          main .lifepage .reviews .feedback .customer .text-rx { width: 100%; padding-right: 1.1rem; margin-top: 113px; padding-bottom: 0.5rem;}
+                          main .lifepage .locations { margin-top: 400px; width: 100%;}
+                          main #aside {margin-top: 643px;}}
+@media (max-width:636px)  {main .lifepage .reviews .feedback .customer .text-rx{margin-top: 140px;}}
+@media (max-width:588px) {main .lifepage .reviews .feedback .customer .text{margin-top: 125px;}
+                          main .lifepage .reviews .feedback #customer{margin-top: 177px;}}
+@media (max-width:504px) {main .lifepage .reviews .feedback .customer .text-rx{margin-top: 158px;}}
+@media (max-width:457px) {main .lifepage .reviews .feedback .customer .text{margin-top: 149px;}
+                          main .lifepage .reviews .feedback .customer .text-cx {margin-top: 80px;}
+                          main .lifepage .reviews .feedback #customer{margin-top: 200px;}}
+@media (max-width:488px) {main .lifepage .reviews {margin-top: 664px;}
+                          main #aside {margin-top: 676px;}}
+@media (max-width:468px) {main .lifepage{margin-top: -16px;}
+                          main #aside {margin-top: 627px;}
+                          main .lifepage .cover, main .lifepage .cover img  {height: 250px; width: 100%;  }
+                          main .lifepage .cover .banner {height: 400px;}
+                          main .lifepage .reviews .feedback #customer-rx {margin-top: 315px;}
+                          main .lifepage .reviews .herbalreviews header {font-size: 0.8em;}
+                          main .lifepage .reviews {margin-top: 615px;}}
+@media (max-width:441px) {main .lifepage .reviews {margin-top: 645px;}
+                          main #aside {margin-top: 657px;}}
+@media (max-width:419px) {main .lifepage .reviews .feedback .customer .text-rx{margin-top: 180px;} }
+@media (max-width:414px) {main .lifepage .reviews .feedback .customer .text-cx {margin-top: 100px;}
+                          main .lifepage .reviews .feedback #customer-rx {margin-top: 335px;}}
+@media (max-width:387px) {main .lifepage .reviews .feedback #customer{margin-top: 199px;}
+                          main .lifepage .reviews .feedback .customer .text {margin-top: 170px;}}
+
+/* herbalife page ends */
+
+
+/* Digital marketing page starts */
+main .marketing .main-heading h1, main .marketing .main-heading  p, main .marketing .market header h2, main .marketing .market header p { display: inline;}
+main .marketing .main-heading .number {font-family: 'Open Sans', 'Montserrat', 'Roboto', 'Merriweather', sans-serif; font-weight: bold;}
+main .marketing .main-heading h1, main .marketing .market header h2 {font-size: 1.19em;}
+main .marketing .main-heading  p, main .marketing .market header p{font-size: 0.9em;}
+main .marketing .main-heading, main .marketing .market {padding-left: 0.5rem; padding-right: 0.5rem;}
+main .marketing .cover-pic, main .marketing .cover-pic .cover-photo {width: 100%; height: 550px;}
+main #margin-top {margin-top: 10px;}
+
+
+@media (max-width:1326px) {main .marketing .cover-pic, main .marketing .cover-pic .cover-photo{height: 450px;}}
+@media (max-width:1000px) {main .marketing .cover-pic, main .marketing .cover-pic .cover-photo{height: 390px;}}
+@media (max-width:666px) {main .marketing .cover-pic, main .marketing .cover-pic .cover-photo{height: 300px;}}
+@media (max-width:468px) {main .marketing .main-heading{margin-top: -10px;}
+                          main .marketing .cover-pic, main .marketing .cover-pic .cover-photo{height: 250px;}}
+@media (max-width:410px) {main .marketing .cover-pic, main .marketing .cover-pic .cover-photo{height: 200px;}}
+/* Digital marketing page ends */
